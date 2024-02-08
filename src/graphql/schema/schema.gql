@@ -1,0 +1,43 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""Auth Input"""
+input AuthInput {
+  email: String!
+  password: String!
+}
+
+"""Auth Response"""
+type LoginResponse {
+  loggedIn: Boolean!
+}
+
+"""Logout Response"""
+type LogoutResponse {
+  loggedOut: Boolean!
+}
+
+type Mutation {
+  createUser(input: UserInput!): UserResponse!
+  deleteUser(email: String!): UserResponse!
+  login(input: AuthInput!): LoginResponse!
+  logout: LogoutResponse!
+}
+
+type Query {
+  getUser(email: String!): UserResponse!
+  getUsers: [UserResponse!]!
+}
+
+"""User Input"""
+input UserInput {
+  email: String!
+  password: String!
+}
+
+"""User Response"""
+type UserResponse {
+  _id: String!
+  email: String!
+}
